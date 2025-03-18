@@ -17,6 +17,8 @@ Comportamento do projeto:
 7. Ao clicar no item MQTT, a esp envia uma mensagem de teste ao broker.
 
 
+O projeto nescessitou de modificações nas bibliotecas de criação de QR Code, para possibilitar a manipulação da posição na tela, orientação, cor e tamanho.
+
 
 https://github.com/user-attachments/assets/a6a9281f-d669-4173-a714-b087a6bd3946
 
