@@ -1,6 +1,6 @@
 /*
- * ESP32 Menu System with MQTT Control
- */ 
+   ESP32 Menu System with MQTT Control
+*/
 
 // Import libraries
 #include <Adafruit_GFX.h>
@@ -44,38 +44,38 @@
 #define SECONDARY_COLOR 0x4BF3
 
 /*
- * MQTT CONNECTION
- */
- const char* ca_cert= \
-"-----BEGIN CERTIFICATE-----\n"
-"MIIFBjCCAu6gAwIBAgIRAIp9PhPWLzDvI4a9KQdrNPgwDQYJKoZIhvcNAQELBQAw" \
-"TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh" \
-"cmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwHhcNMjQwMzEzMDAwMDAw" \
-"WhcNMjcwMzEyMjM1OTU5WjAzMQswCQYDVQQGEwJVUzEWMBQGA1UEChMNTGV0J3Mg" \
-"RW5jcnlwdDEMMAoGA1UEAxMDUjExMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIB" \
-"CgKCAQEAuoe8XBsAOcvKCs3UZxD5ATylTqVhyybKUvsVAbe5KPUoHu0nsyQYOWcJ" \
-"DAjs4DqwO3cOvfPlOVRBDE6uQdaZdN5R2+97/1i9qLcT9t4x1fJyyXJqC4N0lZxG" \
-"AGQUmfOx2SLZzaiSqhwmej/+71gFewiVgdtxD4774zEJuwm+UE1fj5F2PVqdnoPy" \
-"6cRms+EGZkNIGIBloDcYmpuEMpexsr3E+BUAnSeI++JjF5ZsmydnS8TbKF5pwnnw" \
-"SVzgJFDhxLyhBax7QG0AtMJBP6dYuC/FXJuluwme8f7rsIU5/agK70XEeOtlKsLP" \
-"Xzze41xNG/cLJyuqC0J3U095ah2H2QIDAQABo4H4MIH1MA4GA1UdDwEB/wQEAwIB" \
-"hjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwEgYDVR0TAQH/BAgwBgEB" \
-"/wIBADAdBgNVHQ4EFgQUxc9GpOr0w8B6bJXELbBeki8m47kwHwYDVR0jBBgwFoAU" \
-"ebRZ5nu25eQBc4AIiMgaWPbpm24wMgYIKwYBBQUHAQEEJjAkMCIGCCsGAQUFBzAC" \
-"hhZodHRwOi8veDEuaS5sZW5jci5vcmcvMBMGA1UdIAQMMAowCAYGZ4EMAQIBMCcG" \
-"A1UdHwQgMB4wHKAaoBiGFmh0dHA6Ly94MS5jLmxlbmNyLm9yZy8wDQYJKoZIhvcN" \
-"AQELBQADggIBAE7iiV0KAxyQOND1H/lxXPjDj7I3iHpvsCUf7b632IYGjukJhM1y" \
-"v4Hz/MrPU0jtvfZpQtSlET41yBOykh0FX+ou1Nj4ScOt9ZmWnO8m2OG0JAtIIE38" \
-"01S0qcYhyOE2G/93ZCkXufBL713qzXnQv5C/viOykNpKqUgxdKlEC+Hi9i2DcaR1" \
-"e9KUwQUZRhy5j/PEdEglKg3l9dtD4tuTm7kZtB8v32oOjzHTYw+7KdzdZiw/sBtn" \
-"UfhBPORNuay4pJxmY/WrhSMdzFO2q3Gu3MUBcdo27goYKjL9CTF8j/Zz55yctUoV" \
-"aneCWs/ajUX+HypkBTA+c8LGDLnWO2NKq0YD/pnARkAnYGPfUDoHR9gVSp/qRx+Z" \
-"WghiDLZsMwhN1zjtSC0uBWiugF3vTNzYIEFfaPG7Ws3jDrAMMYebQ95JQ+HIBD/R" \
-"PBuHRTBpqKlyDnkSHDHYPiNX3adPoPAcgdF3H2/W0rmoswMWgTlLn1Wu0mrks7/q" \
-"pdWfS6PJ1jty80r2VKsM/Dj3YIDfbjXKdaFU5C+8bhfJGqU3taKauuz0wHVGT3eo" \
-"6FlWkWYtbt4pgdamlwVeZEW+LM7qZEJEsMNPrfC03APKmZsJgpWCDWOKZvkZcvjV" \
-"uYkQ4omYCTX5ohy+knMjdOmdH9c7SpqEWBDC86fiNex+O0XOMEZSa8DA" \
-"-----END CERTIFICATE-----\n";
+   MQTT CONNECTION
+*/
+const char* ca_cert = \
+                      "-----BEGIN CERTIFICATE-----\n"
+                      "MIIFBjCCAu6gAwIBAgIRAIp9PhPWLzDvI4a9KQdrNPgwDQYJKoZIhvcNAQELBQAw" \
+                      "TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh" \
+                      "cmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwHhcNMjQwMzEzMDAwMDAw" \
+                      "WhcNMjcwMzEyMjM1OTU5WjAzMQswCQYDVQQGEwJVUzEWMBQGA1UEChMNTGV0J3Mg" \
+                      "RW5jcnlwdDEMMAoGA1UEAxMDUjExMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIB" \
+                      "CgKCAQEAuoe8XBsAOcvKCs3UZxD5ATylTqVhyybKUvsVAbe5KPUoHu0nsyQYOWcJ" \
+                      "DAjs4DqwO3cOvfPlOVRBDE6uQdaZdN5R2+97/1i9qLcT9t4x1fJyyXJqC4N0lZxG" \
+                      "AGQUmfOx2SLZzaiSqhwmej/+71gFewiVgdtxD4774zEJuwm+UE1fj5F2PVqdnoPy" \
+                      "6cRms+EGZkNIGIBloDcYmpuEMpexsr3E+BUAnSeI++JjF5ZsmydnS8TbKF5pwnnw" \
+                      "SVzgJFDhxLyhBax7QG0AtMJBP6dYuC/FXJuluwme8f7rsIU5/agK70XEeOtlKsLP" \
+                      "Xzze41xNG/cLJyuqC0J3U095ah2H2QIDAQABo4H4MIH1MA4GA1UdDwEB/wQEAwIB" \
+                      "hjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwEgYDVR0TAQH/BAgwBgEB" \
+                      "/wIBADAdBgNVHQ4EFgQUxc9GpOr0w8B6bJXELbBeki8m47kwHwYDVR0jBBgwFoAU" \
+                      "ebRZ5nu25eQBc4AIiMgaWPbpm24wMgYIKwYBBQUHAQEEJjAkMCIGCCsGAQUFBzAC" \
+                      "hhZodHRwOi8veDEuaS5sZW5jci5vcmcvMBMGA1UdIAQMMAowCAYGZ4EMAQIBMCcG" \
+                      "A1UdHwQgMB4wHKAaoBiGFmh0dHA6Ly94MS5jLmxlbmNyLm9yZy8wDQYJKoZIhvcN" \
+                      "AQELBQADggIBAE7iiV0KAxyQOND1H/lxXPjDj7I3iHpvsCUf7b632IYGjukJhM1y" \
+                      "v4Hz/MrPU0jtvfZpQtSlET41yBOykh0FX+ou1Nj4ScOt9ZmWnO8m2OG0JAtIIE38" \
+                      "01S0qcYhyOE2G/93ZCkXufBL713qzXnQv5C/viOykNpKqUgxdKlEC+Hi9i2DcaR1" \
+                      "e9KUwQUZRhy5j/PEdEglKg3l9dtD4tuTm7kZtB8v32oOjzHTYw+7KdzdZiw/sBtn" \
+                      "UfhBPORNuay4pJxmY/WrhSMdzFO2q3Gu3MUBcdo27goYKjL9CTF8j/Zz55yctUoV" \
+                      "aneCWs/ajUX+HypkBTA+c8LGDLnWO2NKq0YD/pnARkAnYGPfUDoHR9gVSp/qRx+Z" \
+                      "WghiDLZsMwhN1zjtSC0uBWiugF3vTNzYIEFfaPG7Ws3jDrAMMYebQ95JQ+HIBD/R" \
+                      "PBuHRTBpqKlyDnkSHDHYPiNX3adPoPAcgdF3H2/W0rmoswMWgTlLn1Wu0mrks7/q" \
+                      "pdWfS6PJ1jty80r2VKsM/Dj3YIDfbjXKdaFU5C+8bhfJGqU3taKauuz0wHVGT3eo" \
+                      "6FlWkWYtbt4pgdamlwVeZEW+LM7qZEJEsMNPrfC03APKmZsJgpWCDWOKZvkZcvjV" \
+                      "uYkQ4omYCTX5ohy+knMjdOmdH9c7SpqEWBDC86fiNex+O0XOMEZSa8DA" \
+                      "-----END CERTIFICATE-----\n";
 const char *mqtt_broker = "a58bfb515e3d44e4bbec101bf408bb32.s1.eu.hivemq.cloud";
 const char *topic = "esp/control";
 const char *mqtt_username = "esp01";
@@ -104,6 +104,8 @@ void initializeMenuLayout();
 void eraseMenuLabels();
 void toggleSelection();
 void setBrightness(int level);
+void setYellowBrightness(int level);
+void setWhiteBrightness(int level);
 void doNothing();
 void adjustBrightnessRight();
 void adjustBrightnessLeft();
@@ -115,12 +117,24 @@ void setupMqtt();
 void reconnectMqtt();
 void startAP();
 void stopAP();
-void displayQRCode();
+void handleQRCode();
 void handleWiFiPage();
 void handleConnect();
+void yellowBrightnessLeft();
+void yellowBrightnessRight();
+void whiteBrightnessLeft();
+void whiteBrightnessRight();
+void handleWifiSavedConnect();
+void drawWiFiStatus();
+void handleEffectLeft();
+void handleEffectRight();
+void orientLeft();
+void orientRight();
+void colorLeft();
+void colorRight();
 
 /*
-* Menu UI structure
+  Menu UI structure
 */
 
 typedef struct {
@@ -135,9 +149,15 @@ MenuItem menuItems[] = {
   {"Wifi", wifiOnMid, doNothing, doNothing},
   {"< Bright >", doNothing, adjustBrightnessLeft, adjustBrightnessRight},
   {"MQTT", handleMqttTest, doNothing, doNothing},
+  {"< Effect >", doNothing, handleEffectLeft, handleEffectRight},
+  {"< Orient >", doNothing, orientLeft, orientRight},
+  {"< Yellow >", doNothing, yellowBrightnessLeft, yellowBrightnessRight},
+  {"< White >", doNothing, whiteBrightnessLeft, whiteBrightnessRight},
+  {"< Color >", doNothing, colorLeft, colorRight},
 };
 
 // Menu layout
+bool isMenuOpen = true;
 int radius = 12;
 int item_space = 4;
 
@@ -165,6 +185,35 @@ int lastStationCount = -1;
 
 int brightness = 255;
 
+//ring light stuff
+int yellow_brightness = 0;
+int white_brightness = 0;
+int effect_selected = 0;
+int effect_direction = 0;
+int effect_color = 0;
+String effects[] = {
+  "fill",
+  "walk",
+  "follow",
+  "rainbow aura",
+  "breath",
+};
+
+String colors[] = {
+  "#FFFFFF",
+  "#000000",
+  "#FF0000",  
+  "#FFA500",  
+  "#FFFF00",  
+  "#008000",  
+  "#00BFFF",  
+  "#0000FF",  
+  "#800080",  
+  "#FFC0CB",  
+  "#A52A2A",    
+  "#808080",
+};
+
 String savedSSID = "";
 String savedPass = "";
 
@@ -189,13 +238,27 @@ bool apMode = false;
 String wifiSSID;
 String wifiPassword;
 
+// Wifi connection states
+enum WiFiState {
+  WIFI_IDLE,
+  WIFI_CONNECTING,
+  WIFI_CONNECTED,
+  WIFI_FAILED
+};
+
+#define WIFI_X TFT_WIDTH - 28
+#define WIFI_Y 12
+
+WiFiState wifiState = WIFI_IDLE;
+unsigned long wifiConnectStartTime = 0;
+
 /*
- * PROJECT SETUP 
- */
+   PROJECT SETUP
+*/
 void setup () {
   //brightness
   pinMode(BRIGHTNESS_PIN, OUTPUT);
-  
+
   //buttons
   pinMode(UP_BTN, INPUT_PULLUP);
   pinMode(DOWN_BTN, INPUT_PULLUP);
@@ -219,7 +282,7 @@ void setup () {
   preferences.begin("brightness", true);
   brightness = preferences.getUInt("level", 255);
   preferences.end();
-  
+
   setBrightness(brightness);
   initializeMenuLayout();
 
@@ -229,49 +292,14 @@ void setup () {
   preferences.end();
 
   if (savedSSID != "") {
-    Serial.println("Found saved WiFi credentials. Connecting to " + savedSSID);
-    WiFi.begin(savedSSID.c_str(), savedPass.c_str());
-    
-    unsigned long startTime = millis();
-    while (WiFi.status() != WL_CONNECTED && millis() - startTime < 10000) {
-      delay(500);
-      Serial.print(".");
-    }
-    
-    if (WiFi.status() == WL_CONNECTED) {
-      Serial.println("\nConnected to WiFi!");
-      setupMqtt();
-    }
+    handleWifiSavedConnect();
   }
 }
 
 void loop() {
   client.loop();
-    
-  if (apMode) {
-    server.handleClient();
-    int currentStationCount = WiFi.softAPgetStationNum();
-
-    // Only update the QR code if the number of connected clients changes
-    if (currentStationCount != lastStationCount) {
-      displayQRCode();
-      lastStationCount = currentStationCount; // Update the last known station count
-    }
-
-    // If the ESP has connected to a WiFi network as a station, stop AP mode.
-    if (WiFi.status() == WL_CONNECTED) {
-      //mqtt config
-      if (!client.connected() && (millis() - lastMqttAttempt > mqttReconnectInterval)) {
-        lastMqttAttempt = millis();
-        reconnectMqtt();
-      }
-
-      stopAP();
-      initializeMenuLayout();
-      
-    }
-  }
-
+  drawWiFiStatus();
+  
   checkButton(UP_BTN, lastStateUp, "Up");
   checkButton(DOWN_BTN, lastStateDown, "Down");
   checkButton(LEFT_BTN, lastStateLeft, "Left");
@@ -280,7 +308,46 @@ void loop() {
   checkButton(SET_BTN, lastStateSet, "Set");
   checkButton(RESET_BTN, lastStateReset, "Reset");
 
+  if (apMode) {
+    server.handleClient();
+    int currentStationCount = WiFi.softAPgetStationNum();
+
+    if (currentStationCount != lastStationCount) {
+      handleQRCode();
+      lastStationCount = currentStationCount;
+    }
+  } else {
+    // Handle WiFi connection state
+    if (wifiState == WIFI_CONNECTING) {
+      if (WiFi.status() == WL_CONNECTED) {
+        Serial.println("\nConnected to WiFi!");
+        setupMqtt();
+        wifiState = WIFI_CONNECTED;
+        isMenuOpen = true;
+      } else if (millis() - wifiConnectStartTime > 10000) { // 10-second timeout
+        Serial.println("\nFailed to connect to WiFi.");
+        wifiState = WIFI_FAILED;
+        startAP(); // Enter AP mode for configuration
+      }
+    }
+
+    // Handle MQTT reconnection when WiFi is connected
+    if (WiFi.status() == WL_CONNECTED && !client.connected()) {
+      if (millis() - lastMqttAttempt > mqttReconnectInterval) {
+        lastMqttAttempt = millis();
+        reconnectMqtt();
+      }
+    }
+  }
+
   delay(50);
+}
+
+void handleWifiSavedConnect() {
+  Serial.println("Found saved WiFi credentials. Connecting to " + savedSSID);
+  WiFi.begin(savedSSID.c_str(), savedPass.c_str());
+  wifiState = WIFI_CONNECTING;
+  wifiConnectStartTime = millis(); // Track when connection attempt started
 }
 
 void setupMqtt() {
@@ -288,7 +355,7 @@ void setupMqtt() {
   client.setCallback(callback);
 
   if (!client.connected()) {
-    reconnectMqtt();  
+    reconnectMqtt();
   }
 }
 
@@ -336,36 +403,46 @@ void handleMqttTest() {
 }
 
 void handleConnect() {
-  if (server.hasArg("ssid") && server.hasArg("pass")) {
+  if (server.hasArg("ssid") && server.hasArg("pass")) {    
     String ssid = server.arg("ssid");
     String pass = server.arg("pass");
-    
-    // Save credentials in non-volatile storage
+
+    // Save credentials even if different from current
     preferences.begin("wifiCreds", false);
     preferences.putString("ssid", ssid);
     preferences.putString("pass", pass);
     preferences.end();
-    
-    // Attempt to connect to the selected WiFi network
+
+    // Disconnect completely before new connection
+    WiFi.disconnect();
     WiFi.begin(ssid.c_str(), pass.c_str());
+    
     server.send(200, "text/html", "<html><body><h1>Connecting to " + ssid + "...</h1></body></html>");
-  } else {
-    server.send(400, "text/html", "<html><body><h1>Bad Request</h1></body></html>");
+    
+    // Force new connection check
+    wifiState = WIFI_CONNECTING;
+    wifiConnectStartTime = millis();
+    stopAP();
   }
 }
 
 void wifiOnMid() {
   if (!apMode) {
-    // In menu mode: start the AP and display the QR code.
+    isMenuOpen = false;
+    // Disconnect from current WiFi before starting AP
+    WiFi.disconnect();
     startAP();
   } else {
-    // In QR mode: stop AP and return to the menu.
-    stopAP();
+    // Only stop AP if not connected through AP
+    if (WiFi.status() != WL_CONNECTED) {
+      stopAP();
+    }
     initializeMenuLayout();
   }
 }
 
 void startAP() {
+  WiFi.mode(WIFI_AP_STA);
   // Generate a random SSID and password for the ESP AP
   wifiSSID = "MORO";
   wifiPassword = "PASS" + String(random(1000, 9999));
@@ -381,7 +458,7 @@ void startAP() {
 
   apMode = true;
 
-  displayQRCode();
+  handleQRCode();
 }
 
 void stopAP() {
@@ -390,25 +467,30 @@ void stopAP() {
   apMode = false;
 }
 
-void displayQRCode() {
+void handleQRCode() {
   tft.fillScreen(BACKGROUND);
   String qrContent;
-  if (WiFi.softAPgetStationNum() > 0) {
-    // When a client connects to the ESP AP, update the QR code to point to the root ("/") URL.
-    qrContent = "http://" + WiFi.softAPIP().toString();
-    qrcode.init(2, 180, 180);
-    qrcode.create(qrContent.c_str());
+  if (apMode) {
+    if (WiFi.softAPgetStationNum() > 0) {
+      // When a client connects to the ESP AP, update the QR code to point to the root ("/") URL.
+      qrContent = "http://" + WiFi.softAPIP().toString();
+      qrcode.init(2, 180, 180);
+      qrcode.create(qrContent.c_str());
+    } else {
+      // Otherwise, display the QR code with the WiFi credentials.
+      String wifiConfig = "WIFI:T:WPA;S:" + wifiSSID + ";P:" + wifiPassword + ";;";
+      qrContent = wifiConfig;
+  
+      qrcode.init(2, 180, 180);
+      qrcode.create(qrContent.c_str());
+  
+      tft.setTextColor(PRIMARY_COLOR);
+      drawCentreString(wifiSSID.c_str(), 32 , 3);
+      drawCentreString(wifiPassword.c_str(), TFT_HEIGHT - 32 , 2);
+    }
   } else {
-    // Otherwise, display the QR code with the WiFi credentials.
-    String wifiConfig = "WIFI:T:WPA;S:" + wifiSSID + ";P:" + wifiPassword + ";;";
-    qrContent = wifiConfig;
-    
-    qrcode.init(2, 180, 180);
-    qrcode.create(qrContent.c_str());
-    
-    tft.setTextColor(PRIMARY_COLOR);
-    drawCentreString(wifiSSID.c_str(), 32 , 3);
-    drawCentreString(wifiPassword.c_str(), TFT_HEIGHT - 32 , 2);
+    isMenuOpen = true;
+    initializeMenuLayout();
   }
 }
 
@@ -440,12 +522,21 @@ void handleWiFiPage() {
   server.send(200, "text/html", html);
 }
 
+
 void setBrightness(int level) {
   client.publish("esp/control/bright", String(level).c_str());
   preferences.begin("brightness", false);
   preferences.putUInt("level", level);
   preferences.end();
   analogWrite(BRIGHTNESS_PIN, level);
+}
+
+void setYellowBrightness(int level) {
+  client.publish("esp/control/brightness/yellow", String(level).c_str());
+}
+
+void setWhiteBrightness(int level) {
+  client.publish("esp/control/brightness/white", String(level).c_str());
 }
 
 void adjustBrightnessLeft() {
@@ -458,6 +549,69 @@ void adjustBrightnessRight() {
   reverseMainItem();
   brightness = min(255, brightness + 25);
   setBrightness(brightness);
+}
+
+
+void yellowBrightnessLeft() {
+  reverseMainItem();
+  yellow_brightness =  max(0, yellow_brightness - 25);
+  setYellowBrightness(yellow_brightness);
+}
+
+void yellowBrightnessRight() {
+  reverseMainItem();
+  yellow_brightness = min(255, yellow_brightness + 25);
+  setYellowBrightness(yellow_brightness);
+}
+
+void whiteBrightnessLeft() {
+  reverseMainItem();
+  white_brightness =  max(0, white_brightness - 25);
+  setWhiteBrightness(white_brightness);
+}
+
+void whiteBrightnessRight() {
+  reverseMainItem();
+  white_brightness = min(255, white_brightness + 25);
+  setWhiteBrightness(white_brightness);
+}
+
+void handleEffectLeft() {
+  effect_selected = (effect_selected - 1 + (sizeof(effects)/sizeof(effects[0]))) % (sizeof(effects)/sizeof(effects[0]));
+  client.publish("esp/control/effect", String(effects[effect_selected]).c_str());
+}
+
+void handleEffectRight() {
+  effect_selected = (effect_selected + 1) % (sizeof(effects)/sizeof(effects[0]));
+  client.publish("esp/control/effect", String(effects[effect_selected]).c_str());
+}
+
+void orientLeft() {
+  effect_direction = !effect_direction;
+  if (effect_direction) {
+    client.publish("esp/control/direction", "forward");
+  } else {
+    client.publish("esp/control/direction", "backward");
+  }
+}
+
+void orientRight() {
+  effect_direction = !effect_direction;
+  if (effect_direction) {
+    client.publish("esp/control/direction", "forward");
+  } else {
+    client.publish("esp/control/direction", "backward");
+  }
+}
+
+void colorLeft() {
+  effect_color = (effect_color - 1 + (sizeof(colors)/sizeof(colors[0]))) % (sizeof(colors)/sizeof(colors[0]));
+  client.publish("esp/control/color", colors[effect_color].c_str());
+}
+
+void colorRight() {
+  effect_color = (effect_color + 1) % (sizeof(colors)/sizeof(colors[0]));
+  client.publish("esp/control/color", colors[effect_color].c_str());
 }
 
 void doNothing() {
@@ -536,6 +690,52 @@ void eraseMenuLabels() {
   tft.fillRect(sub_items_position_x + radius, sub_item_bottom_position_y + radius, sub_item_width  - radius * 2, sub_item_height  - radius * 2, BACKGROUND);
 }
 
+void drawWiFiStatus() {
+  static uint8_t prevState = 255;
+  static unsigned long lastBlink = 0;
+  static uint8_t animFrame = 0;
+  char symbol = ' ';
+  
+  // Only redraw when state changes or for animation
+  if (WiFi.status() != prevState || (millis() - lastBlink > 500)) {
+    tft.setTextColor(BACKGROUND);  // Erase previous symbol
+    tft.drawChar(WIFI_X, WIFI_Y, symbol, PRIMARY_COLOR, BACKGROUND, 2);
+    
+    if (apMode) {
+      symbol = 177; // ▒
+      tft.setTextColor(SECONDARY_COLOR);
+    } else {
+      switch (WiFi.status()) {
+        case WL_CONNECTED:
+          symbol = 254; // ■
+          tft.setTextColor(PRIMARY_COLOR);
+          break;
+        case WL_CONNECT_FAILED:
+        case WL_CONNECTION_LOST:
+          symbol = 178; // ▓
+          tft.setTextColor(SECONDARY_COLOR);
+          break;
+        case WL_IDLE_STATUS:
+        case WL_DISCONNECTED:
+          if (wifiState == WIFI_CONNECTING) {
+            // Animated connecting indicator
+            symbol = 175 + animFrame; // Cycle through ░ ▒ ▓
+            animFrame = (animFrame + 1) % 3;
+            tft.setTextColor(PRIMARY_COLOR);
+          } else {
+            symbol = 176; // ░
+            tft.setTextColor(SECONDARY_COLOR);
+          }
+          break;
+      }
+    }
+    
+    tft.drawChar(WIFI_X, WIFI_Y, symbol, PRIMARY_COLOR, BACKGROUND, 2);
+    prevState = WiFi.status();
+    lastBlink = millis();
+  }
+}
+
 void checkButton(int button, bool &lastState, const char *name) {
   bool currentState = digitalRead(button);
 
@@ -546,6 +746,7 @@ void checkButton(int button, bool &lastState, const char *name) {
 
       if (apMode) {
         stopAP();
+        isMenuOpen = true;
         initializeMenuLayout();
       }
 
@@ -553,9 +754,11 @@ void checkButton(int button, bool &lastState, const char *name) {
         initializeMenuLayout();
       } else if (button == DOWN_BTN) {
         currentMenuIndex = (currentMenuIndex + 1) % menuItemCount;
+        redrawMainItem();
         writeMenuItems();
       } else if (button == UP_BTN) {
         currentMenuIndex = (currentMenuIndex - 1 + menuItemCount) % menuItemCount;
+        redrawMainItem();
         writeMenuItems();
       } else if (button == MID_BTN) {
         menuItems[currentMenuIndex].onMid();
@@ -564,19 +767,13 @@ void checkButton(int button, bool &lastState, const char *name) {
       } else if (button == RIGHT_BTN) {
         menuItems[currentMenuIndex].onRight();
       }
-    } else if (currentState == HIGH) {
+    } else if (currentState == HIGH && isMenuOpen) {
       if (button == MID_BTN) {
-        if (menuItems[currentMenuIndex].onMid == doNothing) {
-          redrawMainItem();
-        }
+        redrawMainItem();
       } else if (button == LEFT_BTN) {
-        if (menuItems[currentMenuIndex].onLeft == doNothing || menuItems[currentMenuIndex].onLeft == adjustBrightnessLeft) {
-          redrawMainItem();
-        }
+        redrawMainItem();
       } else if (button == RIGHT_BTN) {
-        if (menuItems[currentMenuIndex].onRight == doNothing || menuItems[currentMenuIndex].onRight == adjustBrightnessRight) {
-          redrawMainItem();
-        }
+        redrawMainItem();
       }
     }
     lastState = currentState;
