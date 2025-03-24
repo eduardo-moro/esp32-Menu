@@ -128,8 +128,7 @@ void handleWifiSavedConnect();
 void drawWiFiStatus();
 void handleEffectLeft();
 void handleEffectRight();
-void orientLeft();
-void orientRight();
+void handleOrient();
 void colorLeft();
 void colorRight();
 
@@ -150,7 +149,7 @@ MenuItem menuItems[] = {
   {"< Bright >", doNothing, adjustBrightnessLeft, adjustBrightnessRight},
   {"MQTT", handleMqttTest, doNothing, doNothing},
   {"< Effect >", doNothing, handleEffectLeft, handleEffectRight},
-  {"< Orient >", doNothing, orientLeft, orientRight},
+  {"< Orient >", handleOrient, handleOrient, handleOrient},
   {"< Yellow >", doNothing, yellowBrightnessLeft, yellowBrightnessRight},
   {"< White >", doNothing, whiteBrightnessLeft, whiteBrightnessRight},
   {"< Color >", doNothing, colorLeft, colorRight},
@@ -586,7 +585,7 @@ void handleEffectRight() {
   client.publish("esp/control/effect", String(effects[effect_selected]).c_str());
 }
 
-void orientLeft() {
+void handleOrient() {
   effect_direction = !effect_direction;
   if (effect_direction) {
     client.publish("esp/control/direction", "forward");
@@ -595,14 +594,6 @@ void orientLeft() {
   }
 }
 
-void orientRight() {
-  effect_direction = !effect_direction;
-  if (effect_direction) {
-    client.publish("esp/control/direction", "forward");
-  } else {
-    client.publish("esp/control/direction", "backward");
-  }
-}
 
 void colorLeft() {
   effect_color = (effect_color - 1 + (sizeof(colors)/sizeof(colors[0]))) % (sizeof(colors)/sizeof(colors[0]));

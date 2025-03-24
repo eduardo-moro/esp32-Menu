@@ -22,6 +22,6 @@ O projeto nescessitou de modificações nas bibliotecas de criação de QR Code,
 
 https://github.com/user-attachments/assets/a6a9281f-d669-4173-a714-b087a6bd3946
 
-
 https://github.com/user-attachments/assets/3ddc213c-13c7-4853-abfa-3d07ee0f7417
 
+![](wokwi_diagram.png)
