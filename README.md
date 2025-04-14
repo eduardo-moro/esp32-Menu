@@ -9,6 +9,7 @@ Projeto com finalidade de estudo.
 
 
 [design da PCB]("./PCB/README.md")
+
 [design da case 3d]("./3d_case/README.md")
 
 https://github.com/user-attachments/assets/a6a9281f-d669-4173-a714-b087a6bd3946
