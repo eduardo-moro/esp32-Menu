@@ -1,0 +1,20 @@
+idf_component_register(
+    SRCS
+        "src/qrcodedisplay.cpp"
+        "src/qrencode.c"
+        "src/frame-v1.c"
+        "src/frame-v2.c"
+        "src/frame-v3.c"
+        "src/frame-v4.c"
+        "src/frame-v5.c"
+        "src/frame-v6.c"
+        "src/frame-v7.c"
+        "src/frame-v8.c"
+        "src/frame-v9.c"
+        "src/frame-v10.c"
+    INCLUDE_DIRS
+        "src"
+    REQUIRES
+        arduino
+        Adafruit_GFX_Library
+)
