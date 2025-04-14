@@ -6,10 +6,7 @@ Projeto com finalidade de estudo.
 - Display TFT
 - QR Code
 - EspIdf
-  
-Comportamento do projeto:
 
-O projeto nescessitou de modificações nas bibliotecas de criação de QR Code, para possibilitar a manipulação da posição na tela, orientação, cor e tamanho.
 
 [design da PCB]("./PCB/README.md")
 [design da case 3d]("./3d_case/README.md")
