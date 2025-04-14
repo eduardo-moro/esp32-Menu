@@ -11,6 +11,7 @@ Comportamento do projeto:
 
 O projeto nescessitou de modificações nas bibliotecas de criação de QR Code, para possibilitar a manipulação da posição na tela, orientação, cor e tamanho.
 
+[PCB design]("./PCB/README.md")
 
 https://github.com/user-attachments/assets/a6a9281f-d669-4173-a714-b087a6bd3946
 
