@@ -1,0 +1,14 @@
+idf_component_register(
+    SRCS 
+        "qrcode_st7789.cpp"
+    INCLUDE_DIRS 
+        "."
+        "../Adafruit_GFX_Library"
+        "../QRcodeDisplay"
+        "../Adafruit_ST7789"
+    REQUIRES
+        arduino
+        Adafruit_GFX_Library
+        QRcodeDisplay
+        Adafruit_ST7789
+)

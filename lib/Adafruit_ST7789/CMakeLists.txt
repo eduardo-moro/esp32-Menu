@@ -1,0 +1,12 @@
+idf_component_register(
+    SRCS 
+        "Adafruit_ST7789.cpp"
+    INCLUDE_DIRS 
+        "."
+        "../Adafruit_GFX_Library"
+        "../Adafruit_ST77xx"
+    REQUIRES
+        arduino
+        Adafruit_GFX_Library
+        Adafruit_ST77xx
+)

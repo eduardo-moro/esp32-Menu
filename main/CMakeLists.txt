@@ -1,15 +1,15 @@
 idf_component_register(
     SRCS
-        "hello.cpp"
-        "Adafruit_ST7789.cpp"
-        "Adafruit_ST77xx.cpp"
-        "qrcode_st7789.cpp"
+        "main.cpp"
     INCLUDE_DIRS
         "."
         "../lib/QRcodeDisplay/src"
         "../lib/PubSubClient/src"
         "../lib/Adafruit_GFX_Library"
         "../lib/Adafruit_BusIO"
+        "../lib/Adafruit_ST7789"
+        "../lib/Adafruit_ST77xx"
+        "../lib/qrcode_st7789"
     REQUIRES
         arduino
         Adafruit_BusIO

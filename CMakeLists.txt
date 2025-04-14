@@ -8,6 +8,9 @@ set(EXTRA_COMPONENT_DIRS
     lib/Adafruit_GFX_Library
     lib/PubSubClient
     lib/QRcodeDisplay
+    lib/Adafruit_ST7789
+    lib/Adafruit_ST77xx
+    lib/qrcode_st7789
 )
 
 project(hello)
